@@ -1,0 +1,9 @@
+{
+  "proxy": {
+    "use-proxy": false,
+    "proxy-type": "http",
+    "proxyscrape": true,
+    "credential": "",
+    "auth": false
+  }
+}

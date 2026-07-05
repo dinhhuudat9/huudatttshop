@@ -1,0 +1,120 @@
+[build]
+  command = "npm run build"
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_ENV = "production"
+
+[functions]
+  included_files = [
+    "frontend/**",
+    "khungcanhan/**",
+    "database.sql"
+  ]
+
+[[redirects]]
+  from = "/api"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/frames/*"
+  to = "/khungcanhan/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/css/*"
+  to = "/frontend/css/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/js/*"
+  to = "/frontend/js/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/img/*"
+  to = "/frontend/img/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/pages/*"
+  to = "/frontend/pages/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/blocked-ip.html"
+  to = "/frontend/blocked-ip.html"
+  status = 200
+
+[[redirects]]
+  from = "/human-check.html"
+  to = "/frontend/human-check.html"
+  status = 200
+
+[[redirects]]
+  from = "/vuot-link.html"
+  to = "/frontend/vuot-link.html"
+  status = 200
+
+[[redirects]]
+  from = "/index.html"
+  to = "/frontend/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/"
+  to = "/frontend/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/frontend/index.html"
+  status = 200
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/frames/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/pages/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"
+
+[[headers]]
+  for = "/blocked-ip.html"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/human-check.html"
+  [headers.values]
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

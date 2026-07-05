@@ -1,0 +1,17 @@
+name = "shopbanmanguon-worker"
+main = "frontend/worker.js"
+compatibility_date = "2026-04-05"
+workers_dev = true
+
+# Keep your existing Cloudflare account id here if you already have one.
+account_id = "6ad466d9ff49a89a5ec1e4a61a3a05a9"
+
+[assets]
+directory = "./frontend"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = true
+
+[vars]
+# Point this to your Render or Vercel deployment so Cloudflare can proxy /api and /frames.
+BACKEND_ORIGIN = "https://your-render-or-vercel-domain.example.com"

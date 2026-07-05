@@ -1,0 +1,43 @@
+{
+  "name": "source-market",
+  "version": "1.0.0",
+  "description": "Platform bán mã nguồn với tính năng mạng xã hội",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "build": "node -e \"console.log('No frontend build step')\""
+  },
+  "keywords": [
+    "marketplace",
+    "source code",
+    "social"
+  ],
+  "author": "Nguyen Hong Sang",
+  "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.0",
+    "axios": "^1.17.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.5.2",
+    "express-validator": "^7.0.1",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.6.9",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemailer": "^8.0.1",
+    "resend": "^6.12.4",
+    "serverless-http": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
